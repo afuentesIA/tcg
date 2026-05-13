@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div>
             <div className="footer-logo">
-              <div className="footer-mark">B</div>
+             
               <div>
                 <span className="footer-brand-name">TCG</span>
                 <span className="footer-brand-sub">Global Energy Solutions</span>
