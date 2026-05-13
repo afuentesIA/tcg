@@ -1,0 +1,121 @@
+export const products = [
+  {
+    id:'en590', name:'EN590 Diesel', code:'10 PPM', cat:'Automotive Fuel',
+    std:'EN590:2013 + A1:2017', cas:'68476-34-6', hs:'2710 19 43',
+    origin:'Unsanctioned Origin', delivery:'FOB ASWP',
+    port:'Rotterdam · Antwerp · Hamburg · Amsterdam',
+    vessel:'1,000 – 150,000 MT', payment:'MT103 / TT', lead:'5 – 15 Working Days',
+    desc:'High quality Automotive Gas Oil conforming to European Standard EN590:2013 + A1:2017 with 10 ppm maximum sulfur content. Suitable for all diesel engines in automotive and industrial applications.',
+    specs:[
+      {p:'Density at 15°C',u:'kg/m³',l:'820 – 845',t:'832'},
+      {p:'Cetane Number',u:'—',l:'Min. 51.0',t:'53.2'},
+      {p:'Cetane Index',u:'—',l:'Min. 46.0',t:'49.0'},
+      {p:'Sulfur Content',u:'mg/kg',l:'Max. 10',t:'< 10'},
+      {p:'Polycyclic Aromatic',u:'% m/m',l:'Max. 8.0',t:'3.5'},
+      {p:'Flash Point',u:'°C',l:'Min. 55',t:'65'},
+      {p:'Cold Filter Plugging',u:'°C',l:'Max. –20 (Winter)',t:'–24'},
+      {p:'Pour Point',u:'°C',l:'Max. –30',t:'–33'},
+      {p:'Viscosity at 40°C',u:'mm²/s',l:'2.000 – 4.500',t:'3.200'},
+      {p:'Lubricity (WSD 1.4)',u:'μm',l:'Max. 460',t:'380'},
+      {p:'Water Content',u:'mg/kg',l:'Max. 200',t:'< 100'},
+      {p:'Total Contamination',u:'mg/kg',l:'Max. 24',t:'< 15'},
+    ]
+  },
+  {
+    id:'d6', name:'D6 Fuel Oil', code:'RESIDUAL', cat:'Industrial Fuel',
+    std:'ASTM D396', cas:'—', hs:'2710 19 68',
+    origin:'Global', delivery:'FOB / CIF / TTO',
+    port:'As Per Origin', vessel:'As Per Requirement', payment:'TT / LC', lead:'Negotiable',
+    desc:'Heavy Residual Fuel Oil for power generation, marine engines and industrial boilers. Requires pre-heating before pumping and combustion. Sourced directly from top-tier refineries worldwide.',
+    specs:[
+      {p:'Density at 15°C',u:'kg/m³',l:'950 – 1,050',t:'—'},
+      {p:'Viscosity at 50°C',u:'cSt',l:'180 – 380',t:'—'},
+      {p:'Sulfur Content',u:'% m/m',l:'Up to 3.5',t:'—'},
+      {p:'Flash Point',u:'°C',l:'Min. 60',t:'—'},
+      {p:'Water Content',u:'% v/v',l:'Max. 2.0',t:'—'},
+      {p:'Ash Content',u:'% m/m',l:'Max. 0.10',t:'—'},
+      {p:'Pour Point',u:'°C',l:'Max. 18',t:'—'},
+      {p:'Net Calorific Value',u:'MJ/kg',l:'Approx. 40',t:'—'},
+    ]
+  },
+  {
+    id:'jeta1', name:'Jet Fuel A-1', code:'AVIATION', cat:'Aviation Fuel',
+    std:'ASTM D1655 / DEF STAN 91-091', cas:'8008-20-6', hs:'2710 19 21',
+    origin:'Global', delivery:'FOB / CIF / TTO',
+    port:'Major Airports & Depots', vessel:'As Required', payment:'TT / LC', lead:'Negotiable',
+    desc:'Premium Aviation Turbine Fuel tested and certified to meet international aviation standards for safety, quality and performance. For commercial, military and private turbine-engine aircraft.',
+    specs:[
+      {p:'Density at 15°C',u:'kg/m³',l:'775 – 840',t:'—'},
+      {p:'Flash Point',u:'°C',l:'Min. 38',t:'—'},
+      {p:'Freezing Point',u:'°C',l:'Max. –47',t:'—'},
+      {p:'Sulfur Content',u:'% m/m',l:'Max. 0.30',t:'—'},
+      {p:'Net Heat of Combustion',u:'MJ/kg',l:'Min. 42.8',t:'—'},
+      {p:'Aromatics',u:'% v/v',l:'Max. 25',t:'—'},
+      {p:'Smoke Point',u:'mm',l:'Min. 25',t:'—'},
+      {p:'Electrical Conductivity',u:'pS/m',l:'50 – 600',t:'—'},
+    ]
+  },
+  {
+    id:'lng', name:'LNG', code:'CRYOGENIC', cat:'Liquefied Natural Gas',
+    std:'ISO 16903 / GIIGNL', cas:'74-82-8', hs:'2711 11 00',
+    origin:'Global / Multiple Sources', delivery:'FOB / CIF / TTO',
+    port:'Per Origin', vessel:'Per Requirement', payment:'TT / LC', lead:'Negotiable',
+    desc:'Cryogenic Liquefied Natural Gas (Methane CH₄) stored at –162°C. Used in power generation, marine fuel, industrial process energy, city gas, grid supply and as petrochemical feedstock.',
+    specs:[
+      {p:'Methane Content',u:'% mol',l:'85 – 99',t:'—'},
+      {p:'Nitrogen',u:'% mol',l:'Max. 1.0',t:'—'},
+      {p:'Sulfur Content',u:'ppm',l:'< 1',t:'—'},
+      {p:'Boiling Point',u:'°C',l:'Approx. –162',t:'—'},
+      {p:'Density (liquid)',u:'kg/m³',l:'430 – 470',t:'—'},
+      {p:'Gross Heating Value',u:'MJ/m³',l:'39 – 45',t:'—'},
+    ]
+  },
+  {
+    id:'lpg', name:'LPG', code:'PROPANE / BUTANE', cat:'Liquefied Petroleum Gas',
+    std:'GOST 20448 / ASTM D1835', cas:'—', hs:'2711 19 00',
+    origin:'Global / Multiple Sources', delivery:'FOB / CIF / TTO / TTV',
+    port:'Per Origin', vessel:'Per Requirement', payment:'TT / LC', lead:'Negotiable',
+    desc:'Liquefied Petroleum Gas — Propane/Butane mix for domestic, commercial, industrial and petrochemical applications. Clean burning with high energy efficiency and low emissions.',
+    specs:[
+      {p:'Propane Composition',u:'% vol',l:'40 – 60',t:'—'},
+      {p:'Butane Composition',u:'% vol',l:'40 – 60',t:'—'},
+      {p:'Vapor Pressure at 37.8°C',u:'kPa',l:'700 – 1,200',t:'—'},
+      {p:'Specific Gravity at 15°C',u:'—',l:'0.50 – 0.58',t:'—'},
+      {p:'Heating Value (Gross)',u:'MJ/kg',l:'46.0 – 50.0',t:'—'},
+      {p:'Total Sulfur',u:'ppm',l:'Max. 50',t:'—'},
+    ]
+  },
+  {
+    id:'petcoke', name:'Pet Coke', code:'FUEL GRADE', cat:'Petroleum Coke',
+    std:'ASTM D3302 / D3174', cas:'64741-79-3', hs:'2713 11 00',
+    origin:'Multiple Origins', delivery:'FOB / CFR / CIF',
+    port:'As Per Origin', vessel:'10,000 – 70,000 MT', payment:'TT / LC', lead:'Per Contract',
+    desc:'Fuel Grade Petroleum Coke for cement plants, power plants, industrial boilers, calcining and metallurgical applications. High calorific value, low ash content, consistent quality and reliable global supply.',
+    specs:[
+      {p:'Fixed Carbon',u:'%',l:'Min. 85.0',t:'—'},
+      {p:'Sulfur Content',u:'%',l:'Max. 5.0',t:'—'},
+      {p:'Calorific Value (Gross)',u:'Kcal/kg',l:'Min. 7,000',t:'—'},
+      {p:'Calorific Value (Net)',u:'Kcal/kg',l:'Min. 6,500',t:'—'},
+      {p:'Total Moisture',u:'%',l:'Max. 8.0',t:'—'},
+      {p:'Ash Content',u:'%',l:'Max. 0.50',t:'—'},
+      {p:'Volatile Matter',u:'%',l:'Max. 0.80',t:'—'},
+      {p:'Vanadium (V)',u:'ppm',l:'Max. 300',t:'—'},
+    ]
+  },
+  {
+    id:'urea', name:'Urea 46%', code:'GRANULAR', cat:'Premium Fertilizer',
+    std:'ISO 5315 / ISO 5316', cas:'57-13-6', hs:'3102 10 00',
+    origin:'Multiple Origins', delivery:'CIF — All Major Ports',
+    port:'All Major Ports', vessel:'Spot & Long Term', payment:'TT / LC', lead:'Per Contract',
+    desc:'Premium quality Granular Urea (Carbamide CO(NH₂)₂) for agricultural use. Consistent quality, competitive pricing and reliable supply from trusted sources to all global destinations.',
+    specs:[
+      {p:'Total Nitrogen (N)',u:'%',l:'46.0 Min',t:'—'},
+      {p:'Biuret',u:'%',l:'1.0 Max',t:'—'},
+      {p:'Moisture',u:'%',l:'0.5 Max',t:'—'},
+      {p:'Water Insoluble Matter',u:'%',l:'0.1 Max',t:'—'},
+      {p:'Particle Size (1–4 mm)',u:'%',l:'90 Min',t:'—'},
+      {p:'Free Ammonia (NH₃)',u:'%',l:'0.02 Max',t:'—'},
+      {p:'pH (10% Solution)',u:'—',l:'7.0 – 10.0',t:'—'},
+    ]
+  },
+]
