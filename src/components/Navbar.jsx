@@ -29,7 +29,6 @@ export default function Navbar() {
       <header className={`navbar${solid ? ' solid' : ''}`}>
         <div className="navbar-inner wrap">
           <NavLink to="/" className="navbar-brand" onClick={() => setOpen(false)}>
-            <div className="navbar-brandmark">B</div>
             <div className="navbar-wordmark">
               <span className="navbar-name">TCG</span>
               <span className="navbar-tagline">Global Energy Solutions</span>
