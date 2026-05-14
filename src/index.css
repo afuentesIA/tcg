@@ -1051,6 +1051,97 @@ hr.divider { border: none; border-top: 1px solid var(--line-2); margin: 0; }
 }
 .about-site:hover { color: var(--gold-1); }
 
+/* ── NUEVOS ESTILOS DESDE LA IMAGEN ───────────────────── */
+/* Philosophy Grid */
+.about-philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--line-2);
+  margin-top: 2rem;
+}
+
+.about-philosophy-card {
+  background: var(--ink-2);
+  padding: 2rem 1.75rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.about-philosophy-card:hover {
+  background: var(--ink-3);
+  transform: translateY(-2px);
+}
+
+.about-philosophy-title {
+  font-family: var(--f-narrow);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  color: var(--gold-1);
+  text-transform: uppercase;
+}
+
+.about-philosophy-desc {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--txt-2);
+}
+
+/* Core Values */
+.about-core-values {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  margin: 3rem 0 2rem;
+}
+
+.about-core-value {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.7rem 1.5rem;
+  border: 1px solid var(--line-2);
+  transition: all 0.2s ease;
+}
+
+.about-core-value:hover {
+  border-color: var(--gold-0);
+  background: var(--gold-bg);
+  transform: translateY(-2px);
+}
+
+.about-core-value-n {
+  font-family: var(--f-narrow);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--gold-1);
+  opacity: 0.7;
+  letter-spacing: 0.05em;
+}
+
+.about-core-value-title {
+  font-family: var(--f-narrow);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  color: var(--txt-1);
+}
+
+.about-footer-quote {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line-2);
+  letter-spacing: 0.02em;
+  color: var(--txt-2);
+  font-family: var(--f-serif);
+}
+
 /* ══════════════════════════════════════════════════════
    MANDATE PAGE
 ══════════════════════════════════════════════════════ */
@@ -1398,6 +1489,7 @@ a.contact-info-val:hover { color: var(--gold-1); }
   .about-split         { grid-template-columns: 1fr; gap: 40px; }
   .about-pillars       { grid-template-columns: repeat(2,1fr); }
   .about-hqs           { grid-template-columns: repeat(3,1fr); }
+  .about-philosophy-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
   .mand-intro          { grid-template-columns: 1fr; gap: 40px; }
   .mand-regions-grid   { grid-template-columns: repeat(3,1fr); }
   .mand-adv-grid       { grid-template-columns: repeat(2,1fr); }
@@ -1426,6 +1518,10 @@ a.contact-info-val:hover { color: var(--gold-1); }
   .offices             { grid-template-columns: 1fr; }
   .about-pillars       { grid-template-columns: 1fr; }
   .about-hqs           { grid-template-columns: repeat(2,1fr); }
+  .about-philosophy-grid { grid-template-columns: 1fr; }
+  .about-core-values   { gap: 0.75rem; }
+  .about-core-value    { padding: 0.5rem 1rem; }
+  .about-core-value-title { font-size: 0.7rem; }
   .mand-regions-grid   { grid-template-columns: repeat(2,1fr); }
   .mand-adv-grid       { grid-template-columns: 1fr; }
   .mand-comp-grid      { grid-template-columns: 1fr; }
