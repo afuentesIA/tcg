@@ -18,6 +18,17 @@ const HQS = [
   { city:'Lagos',     country:'Nigeria',       role:'Africa — Regional Distribution'                },
 ]
 
+// Valores basados en la imagen
+const PHILOSOPHY_VALUES = [
+  { title:'8FOR WEALTH', description:'The infinity shape represents continuous and long-term value. The report represents our core — responsible and adaptable.' },
+  { title:'GLOBAL REACH', description:'Our mission to power industries of the world. The fluid lines signify seamless supply, stability, integrity and peace of mind.' },
+  { title:'HYDROCARBON FOCUS', description:'Focused on hydrocarbon excellence — delivering energy that drives global economies.' },
+  { title:'FLOW & RELIABILITY', description:'Seamless supply chains and dependable delivery, ensuring uninterrupted operations.' },
+  { title:'TRUST & SECURITY', description:'Design and cool blue tones communicate trust, security and peace of mind.' },
+]
+
+const CORE_VALUES = ['INTEGRITY', 'RELIABILITY', 'RESPONSIBILITY', 'PARTNERSHIP', 'PROGRESS']
+
 export default function About() {
   useReveal()
 
@@ -32,14 +43,34 @@ export default function About() {
           </h1>
           <div className="rule" style={{animation:'fadeIn .5s ease .2s both'}} />
           <p className="page-hero-body" style={{animation:'fadeIn .5s ease .25s both'}}>
-            An international energy company built on real partnerships, direct mandates
-            and long-term relationships with world-class producers across six continents.
+            Fueling Progress. Powering The World.
           </p>
         </div>
       </section>
 
-      {/* Mission */}
+      {/* Our Philosophy - De la imagen */}
       <section className="section">
+        <div className="wrap">
+          <div className="sh">
+            <p className="t-label" data-reveal>Our Philosophy</p>
+            <h2 className="t-display sh-h" data-reveal data-delay="1">
+              <span className="gold">8FOR WEALTH</span> & Global Reach
+            </h2>
+            <div className="rule" data-reveal data-delay="2" />
+          </div>
+          <div className="about-philosophy-grid">
+            {PHILOSOPHY_VALUES.map((item, i) => (
+              <div key={i} className="about-philosophy-card" data-reveal data-delay={String(i + 1)}>
+                <h3 className="about-philosophy-title">{item.title}</h3>
+                <p className="about-philosophy-desc">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mission */}
+      <section className="section section-mid">
         <div className="wrap">
           <div className="about-split">
             <div data-reveal>
@@ -74,8 +105,32 @@ export default function About() {
         </div>
       </section>
 
-      {/* Core principles */}
+      {/* Core Values - De la imagen */}
       <section className="section section-dark">
+        <div className="wrap">
+          <div className="sh">
+            <p className="t-label" data-reveal>Our Core</p>
+            <h2 className="t-display sh-h" data-reveal data-delay="1">
+              <span className="gold">Values</span> That Define Us
+            </h2>
+            <div className="rule" data-reveal data-delay="2" />
+          </div>
+          <div className="about-core-values">
+            {CORE_VALUES.map((value, i) => (
+              <div key={i} className="about-core-value" data-reveal data-delay={String(i + 1)}>
+                <span className="about-core-value-n">{String(i + 1).padStart(2, '0')}</span>
+                <span className="about-core-value-title">{value}</span>
+              </div>
+            ))}
+          </div>
+          <p className="about-footer-quote" data-reveal data-delay="6">
+            Delivering energy today. Building a better tomorrow.
+          </p>
+        </div>
+      </section>
+
+      {/* Core principles */}
+      <section className="section">
         <div className="wrap">
           <div className="sh">
             <p className="t-label" data-reveal>Core Principles</p>
