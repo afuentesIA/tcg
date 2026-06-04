@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 
 const NAV = [
-  { to: '/',          label: 'Home'      },
-  { to: '/products',  label: 'Products'  },
-  { to: '/about',     label: 'About'     },
-  { to: '/mandate',   label: 'Mandate'   },
-  { to: '/logistics', label: 'Logistics' },
-  { to: '/contact',   label: 'Contact'   },
+  { to: '/',           label: 'Home'        },
+  { to: '/products',   label: 'Products'    },
+  { to: '/about',      label: 'About'       },
+  { to: '/allocations', label: 'Allocations' },
+  { to: '/logistics',  label: 'Logistics'   },
+  { to: '/contact',    label: 'Contact'     },
 ]
 
 export default function Navbar() {

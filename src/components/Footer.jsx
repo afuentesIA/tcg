@@ -14,11 +14,11 @@ export default function Footer() {
               </div>
             </div>
             <p className="footer-desc">
-              International energy company built on real partnerships,
-              direct mandates and long-term relationships with world-class producers.
+              International energy company built on real partnerships, 
+              long-term relationships with world-class producers.
             </p>
             <div className="footer-hubs">
-              {['Houston','Rotterdam','Fujairah','Singapore','Lagos'].map(c => (
+              {['Houston','Rotterdam','Fujairah','Singapore'].map(c => (
                 <span key={c} className="footer-hub">{c}</span>
               ))}
             </div>
@@ -26,22 +26,22 @@ export default function Footer() {
 
           <div className="footer-col">
             <p className="footer-col-title">Navigation</p>
-            {[['/', 'Home'],['/products','Products'],['/about','About'],['/mandate','Mandate'],['/logistics','Logistics'],['/contact','Contact']].map(([to,l]) => (
+            {[['/', 'Home'],['/products','Products'],['/about','About'],['/allocations','Allocations'],['/logistics','Logistics'],['/contact','Contact']].map(([to,l]) => (
               <NavLink key={to} to={to} end={to==='/'} className="footer-link">{l}</NavLink>
             ))}
           </div>
 
           <div className="footer-col">
             <p className="footer-col-title">Products</p>
-            {['EN590 Diesel','D6 Fuel Oil','Jet Fuel A-1','LNG','LPG','Pet Coke','Urea 46%'].map(p => (
+            {['EN590 Diesel','D6 Fuel Oil','Jet Fuel A-1','LNG','LPG'].map(p => (
               <NavLink key={p} to="/products" className="footer-link">{p}</NavLink>
             ))}
           </div>
 
           <div className="footer-col">
             <p className="footer-col-title">Contact</p>
-            <a href="mailto:info@tcg.us" className="footer-link">info@tcg.us</a>
-            <a href="https://www.tcg.us" className="footer-link" target="_blank" rel="noreferrer">www.tcg.us</a>
+            <a href="mailto:info@tcgglobal.us" className="footer-link">info@tcgglobal.us</a>
+            <a href="https://www.tcgglobal.us" className="footer-link" target="_blank" rel="noreferrer">www.tcgglobal.us</a>
             <p className="footer-col-title" style={{marginTop:24}}>Standards</p>
             {['AML Compliant','SGS Inspected','KYC Verified','Escrow Protected'].map(t=>(
               <span key={t} className="footer-link t-tag" style={{cursor:'default'}}>{t}</span>
@@ -59,7 +59,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} TCG. All rights reserved.</span>
-          <span>Direct Mandate &middot; Real Energy &middot; Real Results</span>
+          <span>Fuelling Progress, Powering the World</span>
         </div>
       </div>
     </footer>
