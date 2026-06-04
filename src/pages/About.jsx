@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { useReveal } from '../components/useReveal'
 
 const PILLARS = [
@@ -18,7 +19,6 @@ const HQS = [
   { city:'Lagos',     country:'Nigeria',       role:'Africa — Regional Distribution'                },
 ]
 
-// Valores basados en la imagen
 const PHILOSOPHY_VALUES = [
   { title:'8FOR WEALTH', description:'The infinity shape represents continuous and long-term value. The report represents our core — responsible and adaptable.' },
   { title:'GLOBAL REACH', description:'Our mission to power industries of the world. The fluid lines signify seamless supply, stability, integrity and peace of mind.' },
@@ -32,8 +32,64 @@ const CORE_VALUES = ['INTEGRITY', 'RELIABILITY', 'RESPONSIBILITY', 'PARTNERSHIP'
 export default function About() {
   useReveal()
 
+  const seo = {
+    title: 'About TCG — Direct Mandate Energy Trading | Global Oil & Gas Company',
+    description: 'TCG is an international energy company with direct mandates from world-class refineries. We represent, negotiate and deliver oil, gas and petrochemical commodities from Houston, Rotterdam, Fujairah, Singapore and Lagos.',
+    canonical: 'https://tcgglobal.us/about',
+    ogImage: 'https://tcgglobal.us/img/og-about.jpg'
+  }
+
+  const aboutSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About TCG',
+    description: seo.description,
+    url: seo.canonical,
+    about: {
+      '@type': 'Organization',
+      name: 'TCG',
+      description: 'International energy company built on real partnerships and direct mandates from world-class producers.',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Houston',
+        addressRegion: 'TX',
+        addressCountry: 'US'
+      }
+    }
+  }
+
   return (
     <main>
+      {/* ========== SEO META TAGS ========== */}
+      <Helmet>
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <link rel="canonical" href={seo.canonical} />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={seo.canonical} />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:image" content={seo.ogImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="TCG" />
+        <meta property="og:locale" content="en_US" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={seo.canonical} />
+        <meta name="twitter:title" content={seo.title} />
+        <meta name="twitter:description" content={seo.description} />
+        <meta name="twitter:image" content={seo.ogImage} />
+        
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+
+        <script type="application/ld+json">
+          {JSON.stringify(aboutSchema)}
+        </script>
+      </Helmet>
+
       <section className="page-hero">
         <div className="page-hero-lines" aria-hidden="true" />
         <div className="wrap page-hero-content">
@@ -48,7 +104,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Our Philosophy - De la imagen */}
+      {/* Our Philosophy */}
       <section className="section">
         <div className="wrap">
           <div className="sh">
@@ -105,7 +161,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Core Values - De la imagen */}
+      {/* Core Values */}
       <section className="section section-dark">
         <div className="wrap">
           <div className="sh">
@@ -173,11 +229,11 @@ export default function About() {
           <div className="about-contact" data-reveal>
             <div>
               <p className="t-label" style={{marginBottom:16}}>Get In Touch</p>
-              <a href="mailto:info@tcg.us" className="about-email">
-                info@tcg.us
+              <a href="mailto:info@tcgglobal.us" className="about-email">
+                info@tcgglobal.us
               </a>
-              <a href="https://www.tcg.us" className="about-site" target="_blank" rel="noreferrer">
-                www.tcg.us
+              <a href="https://www.tcgglobal.us" className="about-site" target="_blank" rel="noreferrer">
+                www.tcgglobal.us
               </a>
             </div>
             <NavLink to="/contact" className="btn btn-primary">

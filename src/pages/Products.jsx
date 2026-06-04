@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { useReveal } from '../components/useReveal'
 import { products } from '../data/products'
 
@@ -11,8 +12,67 @@ export default function Products() {
 
   const colClass = hasTypical ? 'specs-4' : 'specs-3'
 
+  const seo = {
+    title: 'Energy Products Portfolio — Oil, Gas & Petrochemical Commodities | TCG',
+    description: 'Explore TCG energy product portfolio. 7 high-specification commodities: EN590 Diesel, Jet A1, D6 Virgin Fuel Oil, LNG, LPG, Naphtha, and Urea. Direct mandate from world-class refineries. Full technical data sheets available.',
+    canonical: 'https://tcgglobal.us/products',
+    ogImage: 'https://tcgglobal.us/img/og-products.jpg'
+  }
+
+  // Structured Data - ItemList de productos energéticos
+  const productListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'TCG Energy Products Portfolio',
+    description: seo.description,
+    itemListElement: products.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Product',
+        name: `${p.cat} — ${p.name}`,
+        description: p.desc || `${p.name} — ${p.cat}. Standard: ${p.std}. Origin: ${p.origin}. Delivery: ${p.delivery}.`,
+        category: 'Energy Commodities',
+        manufacturer: {
+          '@type': 'Organization',
+          name: 'TCG'
+        }
+      }
+    }))
+  }
+
   return (
     <main>
+      {/* ========== SEO META TAGS ========== */}
+      <Helmet>
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <link rel="canonical" href={seo.canonical} />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={seo.canonical} />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:image" content={seo.ogImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="TCG" />
+        <meta property="og:locale" content="en_US" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={seo.canonical} />
+        <meta name="twitter:title" content={seo.title} />
+        <meta name="twitter:description" content={seo.description} />
+        <meta name="twitter:image" content={seo.ogImage} />
+        
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+
+        <script type="application/ld+json">
+          {JSON.stringify(productListSchema)}
+        </script>
+      </Helmet>
+
       {/* Page hero */}
       <section className="page-hero">
         <div className="page-hero-lines" aria-hidden="true" />

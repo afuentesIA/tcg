@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { useReveal } from '../components/useReveal'
 import { products } from '../data/products'
 
@@ -10,10 +11,9 @@ const STATS = [
 ]
 
 const PILLARS = [
-  { n:'01', title:'Direct Mandate',  body:'Official mandates from private refineries and verified title holders. No resellers, no middlemen, no inflated margins.' },
-  { n:'02', title:'Best Pricing',    body:'Direct allocation channels eliminate unnecessary layers, translating into the most competitive pricing available in the market.' },
-  { n:'03', title:'Secure Volumes',  body:'Real allocations from real capacity, backed by institutional agreements with world-class refineries across six continents.' },
-  { n:'04', title:'Full Compliance', body:'AML compliant. Full KYC on every counterparty. Legal contracts and SGS or INTERTEK inspection on every transaction.' },
+  { n:'01', title:'Best Pricing',    body:'Direct allocation channels eliminate unnecessary layers, translating into the most competitive pricing available in the market.' },
+  { n:'02', title:'Secure Volumes',  body:'Real allocations from real capacity, backed by institutional agreements with world-class refineries across six continents.' },
+  { n:'03', title:'Full Compliance', body:'AML compliant. Full KYC on every counterparty. Legal contracts and SGS or INTERTEK inspection on every transaction.' },
 ]
 
 const OFFICES = [
@@ -27,8 +27,80 @@ const OFFICES = [
 export default function Home() {
   useReveal()
 
+  const seo = {
+    title: 'TCG — Global Energy Solutions | Direct Mandate Oil & Gas Trading',
+    description: 'TCG is an international energy company with direct allocations from world-class refineries. 7 energy commodities, 150,000 MT vessel capacity, offices in Houston, Rotterdam, Fujairah, Singapore, and Lagos. Real energy, real results.',
+    canonical: 'https://tcgglobal.us/',
+    ogImage: 'https://tcgglobal.us/img/og-home.jpg'
+  }
+
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'TCG',
+    url: 'https://tcgglobal.us',
+    description: 'International energy company built on real partnerships with world-class producers. Direct mandate oil and gas trading across six continents.',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Houston',
+      addressRegion: 'TX',
+      addressCountry: 'US'
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'sales',
+      availableLanguage: ['English']
+    }
+  }
+
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'TCG — Global Energy Solutions',
+    url: 'https://tcgglobal.us',
+    description: seo.description,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://tcgglobal.us/search?q={search_term_string}',
+      'query-input': 'required name=search_term_string'
+    }
+  }
+
   return (
     <main>
+      {/* ========== SEO META TAGS ========== */}
+      <Helmet>
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <link rel="canonical" href={seo.canonical} />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={seo.canonical} />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:image" content={seo.ogImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="TCG" />
+        <meta property="og:locale" content="en_US" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={seo.canonical} />
+        <meta name="twitter:title" content={seo.title} />
+        <meta name="twitter:description" content={seo.description} />
+        <meta name="twitter:image" content={seo.ogImage} />
+        
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
+
+        <script type="application/ld+json">
+          {JSON.stringify(organizationSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(websiteSchema)}
+        </script>
+      </Helmet>
+
       {/* ── HERO ── */}
       <section className="home-hero">
         <div className="home-hero-lines" aria-hidden="true" />
@@ -39,10 +111,10 @@ export default function Home() {
               <span className="hero-line-1">TCG</span>
             </h1>
             <p className="home-hero-sub">
-              Direct Mandate &nbsp;&mdash;&nbsp; Real Energy &nbsp;&mdash;&nbsp; Real Results
+                Fuelling Progress, Powering the World
             </p>
             <p className="home-hero-desc">
-              International energy company built on real partnerships, direct mandates and
+              International energy company built on real partnerships,
               long-term relationships with world-class producers. We represent, negotiate and deliver.
             </p>
             <div className="home-hero-actions">
@@ -52,14 +124,6 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="home-hero-bar">
-          {STATS.map((s, i) => (
-            <div key={i} className="hero-stat">
-              <div className="hero-stat-n">{s.n}<span className="hero-stat-u">&thinsp;{s.u}</span></div>
-              <div className="hero-stat-d">{s.d}</div>
-            </div>
-          ))}
-        </div>
       </section>
 
       {/* ── PILLARS ── */}
@@ -124,9 +188,9 @@ export default function Home() {
         <div className="wrap">
           <div className="mandate-strip" data-reveal>
             <div>
-              <p className="t-label" style={{marginBottom:14}}>Direct Mandate Network</p>
+              <p className="t-label" style={{marginBottom:14}}>Network</p>
               <p className="mandate-strip-text">
-                We hold mandates from private refineries in Asia &amp; USA, verified title holders,
+                Private refineries in Asia &amp; USA, verified title holders,
                 major public refineries, and direct sourcing relationships with the largest
                 producers across six regions worldwide.
               </p>
@@ -136,9 +200,6 @@ export default function Home() {
                 <span key={r} className="mandate-region">{r}</span>
               ))}
             </div>
-            <NavLink to="/mandate" className="btn btn-primary" style={{alignSelf:'center'}}>
-              Our Mandate
-            </NavLink>
           </div>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { useReveal } from '../components/useReveal'
 import { products } from '../data/products'
 
@@ -42,8 +43,66 @@ export default function Contact() {
     setSent(true)
   }
 
+  const seo = {
+    title: 'Contact TCG — Request a Quote | Oil, Gas & Petrochemical Trading',
+    description: 'Contact TCG for direct mandate oil, gas and petrochemical trading. Submit an inquiry for EN590 Diesel, Jet A1, D6, LNG, LPG, Naphtha or Urea. Commercial Invoice within 24 hours. Offices in Houston, Rotterdam, Fujairah, Singapore and Lagos.',
+    canonical: 'https://tcgglobal.us/contact',
+    ogImage: 'https://tcgglobal.us/img/og-contact.jpg'
+  }
+
+  const contactSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contact TCG — Request a Quote',
+    description: seo.description,
+    url: seo.canonical,
+    about: {
+      '@type': 'Organization',
+      name: 'TCG',
+      email: 'info@tcgglobal.us',
+      url: 'https://tcgglobal.us',
+      address: [
+        { '@type': 'PostalAddress', addressLocality: 'Houston', addressCountry: 'US' },
+        { '@type': 'PostalAddress', addressLocality: 'Rotterdam', addressCountry: 'NL' },
+        { '@type': 'PostalAddress', addressLocality: 'Fujairah', addressCountry: 'AE' },
+        { '@type': 'PostalAddress', addressLocality: 'Singapore', addressCountry: 'SG' },
+        { '@type': 'PostalAddress', addressLocality: 'Lagos', addressCountry: 'NG' }
+      ]
+    }
+  }
+
   return (
     <main>
+      {/* ========== SEO META TAGS ========== */}
+      <Helmet>
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <link rel="canonical" href={seo.canonical} />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={seo.canonical} />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:image" content={seo.ogImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="TCG" />
+        <meta property="og:locale" content="en_US" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={seo.canonical} />
+        <meta name="twitter:title" content={seo.title} />
+        <meta name="twitter:description" content={seo.description} />
+        <meta name="twitter:image" content={seo.ogImage} />
+        
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+
+        <script type="application/ld+json">
+          {JSON.stringify(contactSchema)}
+        </script>
+      </Helmet>
+
       <section className="page-hero">
         <div className="page-hero-lines" aria-hidden="true" />
         <div className="wrap page-hero-content">
@@ -65,15 +124,15 @@ export default function Contact() {
 
           <div className="contact-info-block" data-reveal>
             <p className="contact-info-label">Email</p>
-            <a href="mailto:info@tcg.us" className="contact-info-val">
-              info@tcg.us
+            <a href="mailto:info@tcgglobal.us" className="contact-info-val">
+              info@tcgglobal.us
             </a>
           </div>
 
           <div className="contact-info-block" data-reveal data-delay="1">
             <p className="contact-info-label">Website</p>
-            <a href="https://www.tcg.us" className="contact-info-val" target="_blank" rel="noreferrer">
-              www.tcg.us
+            <a href="https://www.tcgglobal.us" className="contact-info-val" target="_blank" rel="noreferrer">
+              www.tcgglobal.us
             </a>
           </div>
 
