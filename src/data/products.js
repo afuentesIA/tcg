@@ -85,37 +85,4 @@ export const products = [
       {p:'Total Sulfur',u:'ppm',l:'Max. 50',t:'—'},
     ]
   },
-  {
-    id:'petcoke', name:'Pet Coke', code:'FUEL GRADE', cat:'Petroleum Coke',
-    std:'ASTM D3302 / D3174', cas:'64741-79-3', hs:'2713 11 00',
-    origin:'Multiple Origins', delivery:'FOB / CFR / CIF',
-    port:'As Per Origin', vessel:'10,000 – 70,000 MT', payment:'TT / LC', lead:'Per Contract',
-    desc:'Fuel Grade Petroleum Coke for cement plants, power plants, industrial boilers, calcining and metallurgical applications. High calorific value, low ash content, consistent quality and reliable global supply.',
-    specs:[
-      {p:'Fixed Carbon',u:'%',l:'Min. 85.0',t:'—'},
-      {p:'Sulfur Content',u:'%',l:'Max. 5.0',t:'—'},
-      {p:'Calorific Value (Gross)',u:'Kcal/kg',l:'Min. 7,000',t:'—'},
-      {p:'Calorific Value (Net)',u:'Kcal/kg',l:'Min. 6,500',t:'—'},
-      {p:'Total Moisture',u:'%',l:'Max. 8.0',t:'—'},
-      {p:'Ash Content',u:'%',l:'Max. 0.50',t:'—'},
-      {p:'Volatile Matter',u:'%',l:'Max. 0.80',t:'—'},
-      {p:'Vanadium (V)',u:'ppm',l:'Max. 300',t:'—'},
-    ]
-  },
-  {
-    id:'urea', name:'Urea 46%', code:'GRANULAR', cat:'Premium Fertilizer',
-    std:'ISO 5315 / ISO 5316', cas:'57-13-6', hs:'3102 10 00',
-    origin:'Multiple Origins', delivery:'CIF — All Major Ports',
-    port:'All Major Ports', vessel:'Spot & Long Term', payment:'TT / LC', lead:'Per Contract',
-    desc:'Premium quality Granular Urea (Carbamide CO(NH₂)₂) for agricultural use. Consistent quality, competitive pricing and reliable supply from trusted sources to all global destinations.',
-    specs:[
-      {p:'Total Nitrogen (N)',u:'%',l:'46.0 Min',t:'—'},
-      {p:'Biuret',u:'%',l:'1.0 Max',t:'—'},
-      {p:'Moisture',u:'%',l:'0.5 Max',t:'—'},
-      {p:'Water Insoluble Matter',u:'%',l:'0.1 Max',t:'—'},
-      {p:'Particle Size (1–4 mm)',u:'%',l:'90 Min',t:'—'},
-      {p:'Free Ammonia (NH₃)',u:'%',l:'0.02 Max',t:'—'},
-      {p:'pH (10% Solution)',u:'—',l:'7.0 – 10.0',t:'—'},
-    ]
-  },
 ]
